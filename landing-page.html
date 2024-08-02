@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmashHit Badminton Club</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-section {
+            background-image: url('https://source.unsplash.com/1600x900/?badminton');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-section .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-section h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .hero-section p {
+            font-size: 1.5em;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #388e3c;
+        }
+
+        .about-section, .features-section, .call-to-action, .contact-section {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .about-section h2, .features-section h2, .call-to-action h2, .contact-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .feature {
+            width: 30%;
+            min-width: 250px;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f7f7f7;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .contact-section form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-section input, .contact-section textarea {
+            width: 100%;
+            max-width: 500px;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .contact-section button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-section button:hover {
+            background-color: #388e3c;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero-section">
+        <div class="container">
+            <h1>SmashHit Badminton Club</h1>
+            <p>Where Passion Meets Precision</p>
+            <a href="#about" class="cta-button">Discover More</a>
+        </div>
+    </header>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Welcome to SmashHit Badminton Club, where players of all levels come together to enjoy the game. Whether you're a beginner or a pro, you'll find a community that supports and challenges you.</p>
+        </div>
+    </section>
+
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2>Features</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>Professional Coaching</h3>
+                    <p>Train with the best coaches to improve your skills and game strategy.</p>
+                </div>
+                <div class="feature">
+                    <h3>State-of-the-Art Courts</h3>
+                    <p>Play on premium quality courts designed for the best playing experience.</p>
+                </div>
+                <div class="feature">
+                    <h3>Community Events</h3>
+                    <p>Join our tournaments and social events to connect with other players.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="call-to-action">
+        <div class="container">
+            <h2>Join SmashHit Today!</h2>
+            <a href="#contact" class="cta-button">Contact Us</a>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Ready to take your game to the next level? Contact us today to learn more about our membership options.</p>
+            <form id="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 SmashHit Badminton Club. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Smooth scroll to sections
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Simple form submission handling
+            const form = document.getElementById('contact-form');
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                alert('Thank you for reaching out! We will get back to you soon.');
+                form.reset();
+            });
+        });
+    </script>
+</body>
+</html>
